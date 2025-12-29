@@ -1,14 +1,14 @@
 import express from "express"
-export const init_api = (manifest = {port:null,author:"you"}) => {
-    if (manifest.port === null) {throw new Error("Port not found in manifest")}
+import { recept_routes } from "./recept_routes.js"
+import path from "path"
+
+export const init_api = async (manifest, projectname) => {
+    manifest.validate()
+    const basePath = path.join(process.cwd(), "user", "projects", projectname)
+    const routes = recept_routes(basePath + "/" + manifest.rendered_directory)
     const app = express()
-    if (manifest.hello_route) app.get("/hello",(req,res)=>res.json({message:"hello!"}))
+    if (manifest.hello_route) {app.get("/hello", (req, res) => res.json({ message: "hello!" }))};
     app.listen(manifest.port, () => {
-        console.log(
-            manifest.running_message ? 
-            manifest.author+"_messages:"+manifest.running_message 
-            : "tomato_messages:server running in port." + manifest.port
-        )
+        console.log(manifest.logServerRunningMessage())
     })
-    console.log("tomato_messages:api initialized successfully.")
 }
