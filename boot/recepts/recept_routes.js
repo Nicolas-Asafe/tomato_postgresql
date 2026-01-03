@@ -121,4 +121,3 @@ export const recept_routes = async (basePath, distros = []) => {
 
   return routes
 }
-}
