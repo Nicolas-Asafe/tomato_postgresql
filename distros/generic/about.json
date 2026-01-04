@@ -1,0 +1,8 @@
+{
+    "name": "generic",
+    "title": "Generic Distro",
+    "description": "A generic distro for Tomato-X.",
+    "version": "1.0.0",
+    "author": "tomato-x",
+    "license": "MIT"
+}
