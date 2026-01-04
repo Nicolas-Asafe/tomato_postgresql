@@ -13,7 +13,8 @@ export class manifest {
     hello_route = false,
     running_message = null,
     rendered_directory = null,
-    distros = []
+    distros = [],
+    distroconfigs = {}
   ) {
     this.port = port
     this.author = author
@@ -21,6 +22,7 @@ export class manifest {
     this.running_message = running_message
     this.rendered_directory = rendered_directory
     this.distros = distros
+    this.distroconfigs = distroconfigs
   }
 
   validate() {

@@ -14,6 +14,7 @@ export const recept_manifest = async (projectname) => {
     data.hello_route ?? null,
     data.running_message ?? null,
     data.rendered_directory ?? null,
-    data.distros ?? []
+    data.distros ?? [],
+    data.distroconfigs ?? {}
   );
 }
