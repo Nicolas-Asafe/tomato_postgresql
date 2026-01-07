@@ -6,14 +6,24 @@
  */
 
 export default async function validateResponseParams(params) {
+  const validKeys = ["text"]
   if (!params) {
     throw new Error("[Param responsetxt] Parameters object is required")
   }
-
   if (typeof params !== "object") {
     throw new Error("[Param responsetxt] Parameters must be an object")
   }
-
+  if (!params.data.text){
+    throw new Error("[Param responsetxt] Parameter 'text' is required")
+  }
+  if (typeof params.data.text !== "string") {
+    throw new Error("[Param responsetxt] Parameter 'text' must be a string")
+  }
+   for (const key of Object.keys(params.data)) {
+    if (!validKeys.includes(key)) {
+      throw new Error(`[Param responsetxt] Invalid parameter: ${key}`);
+    }
+  }
   const validated = {}
 
   if (params.data !== undefined) {

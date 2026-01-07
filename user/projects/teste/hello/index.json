@@ -5,6 +5,6 @@
     "method":"get",
     "status":200,
     "params": {
-        "message":"Hello,World!"
+        "text":"Hello,World!"
     }
 }

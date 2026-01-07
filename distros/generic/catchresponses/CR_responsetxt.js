@@ -45,6 +45,7 @@ export default async function catchResponseTextHandler(ctx) {
     }
 
     ctx.res.status(statusCode).json(errorResponse)
+    consoleError(`[CatchResponse CR_responsetxt] Sent error response with status ${statusCode} for path ${ctx.metadata?.path}: ${ctx.error.message}`)
     return true
   } catch (error) {
     console.error(
@@ -65,4 +66,7 @@ export default async function catchResponseTextHandler(ctx) {
       )
     }
   }
+}
+function consoleError(message) {
+    throw new Error(message)
 }
