@@ -7,6 +7,11 @@ export default class GenericParams {
                 "responsetxt",
                 "generic",
                 () => import("./params_responsetxt.js")
+            ),
+            "generic:param_responsehtmlpage": new Response(
+                "responsehtmlpage",
+                "generic",
+                () => import("./params_responsehtmlpage.js")
             )
         }
     }

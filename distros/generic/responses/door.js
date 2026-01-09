@@ -7,6 +7,11 @@ export default class GenericResponses {
                 "responsetxt",
                 "generic",
                 () => import("./response_responsetxt.js")
+            ),
+            "generic:response_responsehtmlpage": new Response(
+                "responsehtmlpage",
+                "generic",
+                () => import("./response_responsehtmlpage.js")
             )
         }
     }

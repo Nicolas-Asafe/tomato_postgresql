@@ -7,6 +7,11 @@ export default class GenericCatchResponses {
                 "responsetxt",
                 "generic",
                 () => import("./CR_responsetxt.js")
+            ),
+            "generic:catch_responsehtmlpage": new Response(
+                "responsehtmlpage",
+                "generic",
+                () => import("./CR_responsehtmlpage.js")
             )
         }
     }

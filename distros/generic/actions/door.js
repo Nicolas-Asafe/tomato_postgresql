@@ -6,6 +6,11 @@ export default class GenericActions {
                 "responsetxt",
                 "generic",
                 () => import("./responsetxt.js")
+            ),
+            "generic:action_responsehtmlpage": new Action(
+                "responsehtmlpage",
+                "generic",
+                () => import("./responsehtmlpage.js")
             )
         }
     }

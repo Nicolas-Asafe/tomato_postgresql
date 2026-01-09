@@ -1,10 +1,12 @@
 {
-    "base":"generic:action_responsetxt",
-    "response":"generic:response_responsetxt",
-    "catch_response":"generic:catch_responsetxt",
+    "base":"generic:action_responsehtmlpage",
+    "response":"generic:response_responsehtmlpage",
+    "catch_response":"generic:catch_responsehtmlpage",
     "method":"get",
     "status":200,
     "params": {
-        "text":"Hello,World!"
+        "site_name":"My website",
+        "title":"From Nicolas to Tomato-X",
+        "description":"I want classes for my distro developement"
     }
 }

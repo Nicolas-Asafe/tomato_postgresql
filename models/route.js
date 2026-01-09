@@ -136,12 +136,6 @@ export class Route {
           `[Route ${this.path}] Params must be an object, not an array`
         )
       }
-
-      if (paramType === "object" && Object.keys(this.params).length === 0) {
-        throw new Error(
-          `[Route ${this.path}] Params object cannot be empty`
-        )
-      }
     }
 
     if (this.method === "get" && this.status === 204) {
