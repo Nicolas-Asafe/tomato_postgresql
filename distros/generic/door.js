@@ -10,23 +10,22 @@ import GenericActions from "./actions/door.js"
 import GenericResponses from "./responses/door.js"
 import GenericCatchResponses from "./catchresponses/door.js"
 import GenericParams from "./params/door.js"
-import GenericTypes from "./types/door.js"
 import GenericConfig from "./configs.js"
 
 export default class GenericBaseDoor {
-  constructor(configs = null) {
+  constructor(manifest = null) {
     if (!GenericBaseDoor.instance) {
       this.name = "generic"
       this.actions = new GenericActions()
       this.responses = new GenericResponses()
       this.catchResponses = new GenericCatchResponses()
       this.params = new GenericParams()
-      this.types = new GenericTypes()
-      this.configs = new GenericConfig(configs)
+      this.configs = new GenericConfig(manifest.distro_configs)
       GenericBaseDoor.instance = this
     }
     console.log("[GenericBaseDoor] Generic distro initialized")
     console.log("[Test Param]:", this.configs.test_param)
+
     return GenericBaseDoor.instance
   }
 
@@ -84,19 +83,5 @@ export default class GenericBaseDoor {
       throw new Error(`[GenericBaseDoor] Param "${name}" not found in generic distro`)
     }
     return this.params.get(name)
-  }
-
-  hasType(name) {
-    if (!name || typeof name !== "string") {
-      throw new Error("[GenericBaseDoor] Type name must be a non-empty string")
-    }
-    return this.types.has(name)
-  }
-
-  getType(name) {
-    if (!this.hasType(name)) {
-      throw new Error(`[GenericBaseDoor] Type "${name}" not found in generic distro`)
-    }
-    return this.types.get(name)
   }
 }

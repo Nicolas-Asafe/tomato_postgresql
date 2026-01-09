@@ -6,7 +6,7 @@
  * Opens each distro door (interface) and returns loaded distro instances.
  */
 
-import { open_door } from "../util/open_door.js"
+import { open_door } from "../../util/open_door.js"
 
 export const place_distros = async (manifest) => {
   if (!manifest || !manifest.distros) {
@@ -17,7 +17,7 @@ export const place_distros = async (manifest) => {
   const distrosPlaced = []
 
   for (const distro of distros) {
-    distrosPlaced.push(await open_door(distro,manifest.distro_configs))
+    distrosPlaced.push(await open_door(distro,manifest))
   }
 
   return distrosPlaced
