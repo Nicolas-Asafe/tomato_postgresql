@@ -17,6 +17,7 @@ export const init = async (projectname) => {
   try {
     const manifest = await recept_manifest(projectname)
     manifest.validate()
+    manifest.projectname = projectname
     const distros = await place_distros(manifest)
     manifest.distros_opened = distros
 
