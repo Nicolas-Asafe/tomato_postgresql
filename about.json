@@ -1,0 +1,22 @@
+{
+  "name": "tomato_postgresql",
+  "title": "TomatoPostgresql Distro",
+  "description": "A postgres distro for Tomato-X.",
+  "requirements":{
+    "file 'tomato_postgresql.json' in project root":{
+      "user":"string_value and required",
+      "password":"string_value and required",
+      "database":"string_value and required",
+      "host":"string_value and required",
+      "port":"int_value and required",
+      "ssl":"boolean_value and required"
+    },
+    "db postgresql":"on"
+  },
+  "bases": {
+    "none":true
+  },
+  "version": "26.1.0",
+  "author": "tomato-x",
+  "license": "MIT"
+}
